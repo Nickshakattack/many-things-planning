@@ -44,3 +44,16 @@ function draw() {
       let distY = shape.y - other.y;
       let distance = sqrt(distX * distX + distY * distY);
       let minDist = (shape.size + other.size) / 2;
+
+
+
+      if (distance < minDist) {
+        let angle = atan2(distY, distX);
+        let speedA = sqrt(shape.speedX * shape.speedX + shape.speedY * shape.speedY);
+        let speedB = sqrt(other.speedX * other.speedX + other.speedY * other.speedY);
+
+        let newSpeedX_A = speedB * cos(angle);
+        let newSpeedY_A = speedB * sin(angle);
+        let newSpeedX_B = speedA * cos(angle + PI);
+        let newSpeedY_B = speedA * sin(angle + PI);
+
