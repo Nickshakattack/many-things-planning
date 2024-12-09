@@ -35,3 +35,12 @@ function draw() {
     if (shape.y < 0 || shape.y > height) {
       shape.speedY *= -1; 
     }
+
+
+    for (let j = i + 1; j < shapes.length; j++) {
+      let other = shapes[j];
+
+      let distX = shape.x - other.x;
+      let distY = shape.y - other.y;
+      let distance = sqrt(distX * distX + distY * distY);
+      let minDist = (shape.size + other.size) / 2;
