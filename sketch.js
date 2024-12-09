@@ -57,3 +57,24 @@ function draw() {
         let newSpeedX_B = speedA * cos(angle + PI);
         let newSpeedY_B = speedA * sin(angle + PI);
 
+
+
+          shape.speedX = newSpeedX_A;
+        shape.speedY = newSpeedY_A;
+        other.speedX = newSpeedX_B;
+        other.speedY = newSpeedY_B;
+
+        let overlap = minDist - distance;
+        shape.x += (overlap / 2) * (distX / distance);
+        shape.y += (overlap / 2) * (distY / distance);
+        other.x -= (overlap / 2) * (distX / distance);
+        other.y -= (overlap / 2) * (distY / distance);
+      }
+    }
+
+    fill(shape.color);
+    noStroke();
+    ellipse(shape.x, shape.y, shape.size);
+  }
+}
+
