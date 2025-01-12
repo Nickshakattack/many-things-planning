@@ -1,5 +1,4 @@
   Code:
-
   
 let shapes = [];
 
